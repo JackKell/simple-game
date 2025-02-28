@@ -5,9 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbcrkdfpquagp" path="res://tilemap_packed.png" id="2_2pkjn"]
 [ext_resource type="Script" path="res://player.gd" id="2_u7wc8"]
 [ext_resource type="Texture2D" uid="uid://dqrm7hndx7dac" path="res://icon.svg" id="4_s2ooo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ker"]
-size = Vector2(20, 11)
+[ext_resource type="PackedScene" uid="uid://brbi5575rx6em" path="res://spawner.tscn" id="7_p4722"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v1072"]
 radius = 4.0
@@ -29,20 +27,8 @@ tile_set = ExtResource("1_7me15")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
-[node name="car" type="Area2D" parent="."]
-position = Vector2(-66, -16)
-
-[node name="Sprite" type="Sprite2D" parent="car"]
-texture = ExtResource("2_2pkjn")
-region_enabled = true
-region_rect = Rect2(240, 232, 32, 24)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_j7ker")
-
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(-72, 72)
+position = Vector2(0, 120)
 script = ExtResource("2_u7wc8")
 
 [node name="Shadow" type="Sprite2D" parent="player"]
@@ -58,3 +44,14 @@ region_rect = Rect2(384, 144, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 shape = SubResource("CircleShape2D_v1072")
+
+[node name="spawner" parent="." instance=ExtResource("7_p4722")]
+
+[node name="spawner2" parent="." instance=ExtResource("7_p4722")]
+position = Vector2(-96, 88)
+
+[node name="spawner3" parent="." instance=ExtResource("7_p4722")]
+position = Vector2(-96, 48)
+
+[node name="spawner4" parent="." instance=ExtResource("7_p4722")]
+position = Vector2(-96, 24)

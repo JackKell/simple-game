@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 const CELL_SIZE = 16
 
 const BOTTOM_BOUND = 120
@@ -8,11 +8,14 @@ const RIGHT_BOUND = 72
 const TOP_BOUND = -120
 
 var tween: Tween
-
+var startposition: Vector2
 @onready var body: Sprite2D = $Body
 @onready var shadow: Sprite2D = $Shadow
 
 @export var hopTime: float = 0.1
+
+func _ready() -> void:
+	startposition = position
 
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("move_up")):
@@ -31,7 +34,6 @@ func _process(delta: float) -> void:
 func move(direction: Vector2):
 	if (tween and tween.is_running()):
 		return
-	print("animate")
 	tween = create_tween()
 	tween.tween_property(self, "position", position + direction, hopTime)
 	tween.parallel().set_ease(Tween.EASE_OUT).tween_property(body, "position", Vector2(0, -14), hopTime / 2)
@@ -39,5 +41,8 @@ func move(direction: Vector2):
 	tween.chain().set_ease(Tween.EASE_IN).tween_property(body, "position", Vector2(0, -7), hopTime / 2)
 	tween.tween_property(shadow, "scale", Vector2(0.05, 0.05), hopTime / 2)
 	
-	
+
+func kill():
+	position = startposition
+	tween.kill()
 	

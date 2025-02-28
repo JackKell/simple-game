@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://brbi5575rx6em"]
+
+[ext_resource type="Script" path="res://spawner.gd" id="1_0g4fn"]
+[ext_resource type="PackedScene" uid="uid://ck12v3r0tugp4" path="res://car.tscn" id="2_xs5so"]
+
+[node name="spawner" type="Marker2D"]
+position = Vector2(-96, 100)
+script = ExtResource("1_0g4fn")
+car_template = ExtResource("2_xs5so")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
