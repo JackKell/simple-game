@@ -45,12 +45,12 @@ shape = SubResource("RectangleShape2D_j7ker")
 position = Vector2(-72, 72)
 script = ExtResource("2_u7wc8")
 
-[node name="Sprite2D2" type="Sprite2D" parent="player"]
+[node name="Shadow" type="Sprite2D" parent="player"]
 modulate = Color(0, 0, 0, 0.52549)
 scale = Vector2(0.0589799, 0.0589799)
 texture = ExtResource("4_s2ooo")
 
-[node name="Sprite2D" type="Sprite2D" parent="player"]
+[node name="Body" type="Sprite2D" parent="player"]
 position = Vector2(0, -7)
 texture = ExtResource("2_2pkjn")
 region_enabled = true
