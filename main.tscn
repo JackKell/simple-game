@@ -1,14 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://d2v1xqcmbxbdp"]
+[gd_scene load_steps=5 format=4 uid="uid://d2v1xqcmbxbdp"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_3d3i5"]
 [ext_resource type="TileSet" uid="uid://u3or2ml7b071" path="res://urban_tiles.tres" id="1_7me15"]
-[ext_resource type="Texture2D" uid="uid://cbcrkdfpquagp" path="res://tilemap_packed.png" id="2_2pkjn"]
-[ext_resource type="Script" path="res://player.gd" id="2_u7wc8"]
-[ext_resource type="Texture2D" uid="uid://dqrm7hndx7dac" path="res://icon.svg" id="4_s2ooo"]
+[ext_resource type="PackedScene" uid="uid://mcm8xcu13ocq" path="res://player.tscn" id="3_b7e0s"]
 [ext_resource type="PackedScene" uid="uid://brbi5575rx6em" path="res://spawner.tscn" id="7_p4722"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_v1072"]
-radius = 4.0
 
 [node name="main" type="Node2D"]
 y_sort_enabled = true
@@ -27,23 +22,8 @@ tile_set = ExtResource("1_7me15")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" parent="." instance=ExtResource("3_b7e0s")]
 position = Vector2(0, 120)
-script = ExtResource("2_u7wc8")
-
-[node name="Shadow" type="Sprite2D" parent="player"]
-modulate = Color(0, 0, 0, 0.52549)
-scale = Vector2(0.0589799, 0.0589799)
-texture = ExtResource("4_s2ooo")
-
-[node name="Body" type="Sprite2D" parent="player"]
-position = Vector2(0, -7)
-texture = ExtResource("2_2pkjn")
-region_enabled = true
-region_rect = Rect2(384, 144, 16, 16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-shape = SubResource("CircleShape2D_v1072")
 
 [node name="spawner" parent="." instance=ExtResource("7_p4722")]
 
