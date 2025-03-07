@@ -26,12 +26,45 @@ position_smoothing_enabled = true
 position = Vector2(0, 120)
 
 [node name="spawner" parent="." instance=ExtResource("7_p4722")]
+position = Vector2(-96, 104)
+min_spawn_time = 12
+max_spawn_time = 20
 
 [node name="spawner2" parent="." instance=ExtResource("7_p4722")]
 position = Vector2(-96, 88)
+min_spawn_time = 12
+max_spawn_time = 22
+car_speed = 10
 
 [node name="spawner3" parent="." instance=ExtResource("7_p4722")]
 position = Vector2(-96, 48)
+min_spawn_time = 6
+max_spawn_time = 10
+car_speed = 16
 
 [node name="spawner4" parent="." instance=ExtResource("7_p4722")]
 position = Vector2(-96, 24)
+max_spawn_time = 6
+car_speed = 18
+
+[node name="spawner5" parent="." instance=ExtResource("7_p4722")]
+position = Vector2(-96, -16)
+max_spawn_time = 4
+car_speed = 20
+
+[node name="spawner6" parent="." instance=ExtResource("7_p4722")]
+position = Vector2(-96, -40)
+max_spawn_time = 4
+car_speed = 20
+
+[node name="spawner7" parent="." instance=ExtResource("7_p4722")]
+position = Vector2(-96, -80)
+min_spawn_time = 3
+max_spawn_time = 4
+car_speed = 32
+
+[node name="spawner8" parent="." instance=ExtResource("7_p4722")]
+position = Vector2(-96, -104)
+min_spawn_time = 3
+max_spawn_time = 4
+car_speed = 32
