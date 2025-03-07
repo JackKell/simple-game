@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://d2v1xqcmbxbdp"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_3d3i5"]
+[ext_resource type="Script" uid="uid://ercga03iowtl" path="res://main.gd" id="1_3d3i5"]
 [ext_resource type="TileSet" uid="uid://u3or2ml7b071" path="res://urban_tiles.tres" id="1_7me15"]
 [ext_resource type="PackedScene" uid="uid://mcm8xcu13ocq" path="res://player.tscn" id="3_b7e0s"]
 [ext_resource type="PackedScene" uid="uid://brbi5575rx6em" path="res://spawner.tscn" id="7_p4722"]
