@@ -1,8 +1,10 @@
 extends Area2D
 
-@export var speed = 16
-
-
+@export var speed = 16:
+	set(value):
+		speed = value
+		print(speed)
+		$Sprite.flip_h = speed < 0
 
 func _process(delta: float) -> void:
 	position = position + Vector2(speed * delta,0)

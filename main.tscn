@@ -37,10 +37,10 @@ max_spawn_time = 22
 car_speed = 10
 
 [node name="spawner3" parent="." instance=ExtResource("7_p4722")]
-position = Vector2(-96, 48)
+position = Vector2(96, 48)
 min_spawn_time = 6
 max_spawn_time = 10
-car_speed = 16
+car_speed = -16
 
 [node name="spawner4" parent="." instance=ExtResource("7_p4722")]
 position = Vector2(-96, 24)
