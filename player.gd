@@ -17,6 +17,7 @@ var start_position: Vector2
 @onready var body: Sprite2D = $Body
 @onready var shadow: Sprite2D = $Shadow
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var ray_cast: RayCast2D = $RayCast2D
 
 const HOP = "hop"
 var is_hopping: bool = false
@@ -41,6 +42,10 @@ func _process(delta: float) -> void:
 
 func move(direction: Vector2):
 	if (is_hopping):
+		return
+	ray_cast.target_position = direction
+	ray_cast.force_raycast_update()
+	if (ray_cast.is_colliding()):
 		return
 	if (direction.x < 0):
 		body.frame = left_image
