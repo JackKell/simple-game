@@ -21,4 +21,3 @@ func spawn_car():
 	timer.start()
 	new_car.speed = car_speed
 	# setting the timer to be one of the spawn times
-	
