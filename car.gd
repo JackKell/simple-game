@@ -8,7 +8,6 @@ const car_regions: Array[Rect2] = [taxi_region,redcar_region,convert_region]
 @export var speed = 16:
 	set(value):
 		speed = value
-		print(speed)
 		sprite.flip_h = speed < 0
 
 func _ready() -> void:
