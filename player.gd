@@ -9,10 +9,7 @@ const TOP_BOUND = -120
 
 var start_position: Vector2
 
-@export var up_image: int = 1
-@export var down_image: int = 2
-@export var left_image: int = 0
-@export var right_image: int = 3
+@export var skin: CharacterSkin 
 
 @onready var body: Sprite2D = $Body
 @onready var shadow: Sprite2D = $Shadow
@@ -25,6 +22,7 @@ var hop_tween: Tween = null
 
 func _ready() -> void:
 	start_position = global_position
+	body.texture = skin.down_image
 
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("move_up")):
@@ -48,13 +46,13 @@ func move(direction: Vector2):
 	if (ray_cast.is_colliding()):
 		return
 	if (direction.x < 0):
-		body.frame = left_image
+		body.texture = skin.left_image
 	elif direction.x > 0:
-		body.frame = right_image
+		body.texture = skin.right_image
 	elif direction.y > 0:
-		body.frame = up_image
+		body.texture = skin.down_image
 	elif direction.y < 0:
-		body.frame = down_image
+		body.texture = skin.up_image
 	is_hopping = true
 	animation_player.play(HOP)
 	var hop_time = animation_player.get_animation(HOP).length
@@ -69,6 +67,6 @@ func kill():
 		hop_tween.kill()
 		hop_tween = null
 	is_hopping = false
-	animation_player.play("reset")
+	body.texture = skin.down_image
 	global_position = start_position
 	

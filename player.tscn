@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://mcm8xcu13ocq"]
+[gd_scene load_steps=10 format=3 uid="uid://mcm8xcu13ocq"]
 
 [ext_resource type="Script" uid="uid://dq2rgsulrkkuj" path="res://player.gd" id="1_uyimw"]
+[ext_resource type="Resource" uid="uid://bu066nd3h4gtu" path="res://character_skin/character_skin_1.tres" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://dqrm7hndx7dac" path="res://icon.svg" id="2_xwqfo"]
-[ext_resource type="Texture2D" uid="uid://cbcrkdfpquagp" path="res://tilemap_packed.png" id="3_dxout"]
+[ext_resource type="Texture2D" uid="uid://ngnou37mwrow" path="res://character_skin/character_1_down.tres" id="4_hqtel"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v1072"]
 radius = 4.0
@@ -74,6 +75,7 @@ _data = {
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_uyimw")
+skin = ExtResource("2_hqtel")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.52549)
@@ -82,10 +84,7 @@ texture = ExtResource("2_xwqfo")
 
 [node name="Body" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("3_dxout")
-hframes = 4
-frame = 1
-region_enabled = true
+texture = ExtResource("4_hqtel")
 region_rect = Rect2(368, 144, 64, 16)
 region_filter_clip_enabled = true
 

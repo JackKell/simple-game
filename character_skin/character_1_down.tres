@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ngnou37mwrow"]
+
+[ext_resource type="Texture2D" uid="uid://cbcrkdfpquagp" path="res://tilemap_packed.png" id="1_u3lip"]
+
+[resource]
+atlas = ExtResource("1_u3lip")
+region = Rect2(384, 144, 16, 16)
+filter_clip = true

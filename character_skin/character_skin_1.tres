@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterSkin" load_steps=7 format=3 uid="uid://bu066nd3h4gtu"]
+
+[ext_resource type="Texture2D" uid="uid://ngnou37mwrow" path="res://character_skin/character_1_down.tres" id="1_k3qft"]
+[ext_resource type="Texture2D" uid="uid://cbcrkdfpquagp" path="res://tilemap_packed.png" id="1_ogq00"]
+[ext_resource type="Script" uid="uid://dt1srbo637nwl" path="res://character_skin/character_skin.gd" id="1_pvy0y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05kq3"]
+atlas = ExtResource("1_ogq00")
+region = Rect2(368, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogq00"]
+atlas = ExtResource("1_ogq00")
+region = Rect2(416, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5ind"]
+atlas = ExtResource("1_ogq00")
+region = Rect2(400, 144, 16, 16)
+
+[resource]
+script = ExtResource("1_pvy0y")
+up_image = SubResource("AtlasTexture_y5ind")
+down_image = ExtResource("1_k3qft")
+left_image = SubResource("AtlasTexture_05kq3")
+right_image = SubResource("AtlasTexture_ogq00")
+metadata/_custom_type_script = "uid://dt1srbo637nwl"
