@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2v1xqcmbxbdp"]
+[gd_scene load_steps=8 format=3 uid="uid://d2v1xqcmbxbdp"]
 
 [ext_resource type="Script" uid="uid://ercga03iowtl" path="res://main.gd" id="1_3d3i5"]
 [ext_resource type="PackedScene" uid="uid://dh5fo3ry5nwho" path="res://start_chunk.tscn" id="2_1bvp3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ib854dw8f6lp" path="res://camera_controller.gd" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://bf1wq0vovrr43" path="res://track_manager.gd" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://d0yioulxsblyv" path="res://chunk_1.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://ddbjge7hdunhf" path="res://ui.gd" id="7_272bh"]
 
 [node name="main" type="Node2D"]
 y_sort_enabled = true
@@ -27,3 +28,25 @@ script = ExtResource("5_lquwl")
 player = NodePath("../player")
 tracked_pieces = Array[PackedScene]([ExtResource("6_7mycd")])
 start_chunk = NodePath("../chunk")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("7_272bh")
+
+[node name="current_label" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "000"
+
+[node name="best_label" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "000"
+horizontal_alignment = 2
