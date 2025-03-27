@@ -2,10 +2,11 @@ extends CharacterBody2D
 class_name Player
 const CELL_SIZE = 16
 
+signal die
+
 const BOTTOM_BOUND = 120
 const LEFT_BOUND = -72
 const RIGHT_BOUND = 72
-const TOP_BOUND = -120
 
 var start_position: Vector2
 
@@ -26,8 +27,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("move_up")):
-		if (position.y > TOP_BOUND):
-			move(Vector2(0, -CELL_SIZE))
+		move(Vector2(0, -CELL_SIZE))
 	elif (Input.is_action_pressed("move_down")):
 		if (position.y < BOTTOM_BOUND):
 			move(Vector2(0, CELL_SIZE))
@@ -69,4 +69,5 @@ func kill():
 	is_hopping = false
 	body.texture = skin.down_image
 	global_position = start_position
+	die.emit()
 	
