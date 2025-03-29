@@ -22,15 +22,9 @@ y_sort_origin = 8
 
 [node name="obstacle_layer" type="TileMapLayer" parent="."]
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD8////AAAQAAgAAAD8/wAAAAAQAAkAAAD+////AAAQAAgAAAD+/wAAAAAQAAkAAAABAPv/AAAQAAgAAAABAPz/AAAQAAkAAAD8//f/AAAQAAgAAAD8//j/AAAQAAkAAAABAPf/AAAQAAgAAAABAPj/AAAQAAkAAAD///f/AAAQAAgAAAD///j/AAAQAAkAAAAEAP//AAAQAAsAAAAEAAAAAAAQAAwAAAABAP//AAAQAAsAAAABAAAAAAAQAAwAAAD9//v/AAAQAAsAAAD9//z/AAAQAAwAAAD8//v/AAAQAAsAAAD8//z/AAAQAAwAAAD9//7/AAAKAAsAAAAAAPr/AAAKAAsAAAD9/wIAAAAKAAsAAAADAAIAAAAKAAsAAAA=")
 tile_set = ExtResource("1_fb8os")
 y_sort_origin = 8
-
-[node name="spawner3" parent="." instance=ExtResource("2_2csif")]
-y_sort_enabled = true
-position = Vector2(96, 48)
-min_spawn_time = 6
-max_spawn_time = 10
-car_speed = -16
 
 [node name="spawner4" parent="." instance=ExtResource("2_2csif")]
 y_sort_enabled = true
@@ -38,15 +32,34 @@ position = Vector2(-96, 24)
 max_spawn_time = 6
 car_speed = 18
 
+[node name="spawner3" parent="spawner4" instance=ExtResource("2_2csif")]
+y_sort_enabled = true
+position = Vector2(192, 24)
+min_spawn_time = 6
+max_spawn_time = 10
+car_speed = -16
+
 [node name="spawner5" parent="." instance=ExtResource("2_2csif")]
 y_sort_enabled = true
 position = Vector2(-96, -16)
+max_spawn_time = 4
+car_speed = 45
+
+[node name="spawner9" parent="." instance=ExtResource("2_2csif")]
+y_sort_enabled = true
+position = Vector2(-96, 88)
 max_spawn_time = 4
 car_speed = 20
 
 [node name="spawner6" parent="." instance=ExtResource("2_2csif")]
 y_sort_enabled = true
 position = Vector2(96, -40)
+max_spawn_time = 4
+car_speed = -44
+
+[node name="spawner10" parent="." instance=ExtResource("2_2csif")]
+y_sort_enabled = true
+position = Vector2(97, 113)
 max_spawn_time = 4
 car_speed = -20
 
@@ -55,11 +68,11 @@ y_sort_enabled = true
 position = Vector2(96, -80)
 min_spawn_time = 3
 max_spawn_time = 4
-car_speed = -32
+car_speed = 55
 
 [node name="spawner8" parent="." instance=ExtResource("2_2csif")]
 y_sort_enabled = true
 position = Vector2(-96, -104)
 min_spawn_time = 3
 max_spawn_time = 4
-car_speed = 32
+car_speed = 50
