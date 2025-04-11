@@ -1,21 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck12v3r0tugp4"]
 
 [ext_resource type="Script" uid="uid://wpvjcni7gpm2" path="res://car.gd" id="1_5bpe3"]
-[ext_resource type="Texture2D" uid="uid://cbcrkdfpquagp" path="res://tilemap_packed.png" id="2_4nvgp"]
+[ext_resource type="Texture2D" uid="uid://6mappfmrf6x5" path="res://car_textures/red_car.tres" id="2_uoj53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ker"]
-size = Vector2(20, 11)
+size = Vector2(18, 12)
 
-[node name="car" type="Area2D"]
+[node name="Car" type="Area2D"]
 script = ExtResource("1_5bpe3")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_4nvgp")
-region_enabled = true
-region_rect = Rect2(240, 264, 32, 24)
+position = Vector2(0, -5)
+texture = ExtResource("2_uoj53")
+region_rect = Rect2(288, 264, 32, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_j7ker")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

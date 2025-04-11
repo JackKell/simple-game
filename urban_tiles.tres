@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://u3or2ml7b071"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://u3or2ml7b071"]
 
 [ext_resource type="Texture2D" uid="uid://cbcrkdfpquagp" path="res://tilemap_packed.png" id="1_fxs6p"]
+[ext_resource type="Texture2D" uid="uid://qq4trdv30m6g" path="res://custom_tiles.png" id="2_wsovl"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_tvmey"]
 tile_data = PackedInt32Array(0, 1048576, 8, 65536, 1048576, 9)
@@ -570,8 +571,14 @@ texture = ExtResource("1_fxs6p")
 25:17/0 = 0
 26:17/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iuosm"]
+texture = ExtResource("2_wsovl")
+0:0/0 = 0
+1:0/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_o31is")
+sources/1 = SubResource("TileSetAtlasSource_iuosm")
 pattern_0 = SubResource("TileMapPattern_tvmey")
 pattern_1 = SubResource("TileMapPattern_wsovl")
