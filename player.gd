@@ -41,18 +41,11 @@ func _process(delta: float) -> void:
 func move(direction: Vector2):
 	if (is_hopping):
 		return
+	_update_facing_dirction(direction)
 	ray_cast.target_position = direction
 	ray_cast.force_raycast_update()
 	if (ray_cast.is_colliding()):
 		return
-	if (direction.x < 0):
-		body.texture = skin.left_image
-	elif direction.x > 0:
-		body.texture = skin.right_image
-	elif direction.y > 0:
-		body.texture = skin.down_image
-	elif direction.y < 0:
-		body.texture = skin.up_image
 	is_hopping = true
 	animation_player.play(HOP)
 	var hop_time = animation_player.get_animation(HOP).length
@@ -66,8 +59,19 @@ func kill():
 	if (hop_tween and hop_tween.is_running()):
 		hop_tween.kill()
 		hop_tween = null
+	animation_player.play("RESET")
 	is_hopping = false
 	body.texture = skin.down_image
 	global_position = start_position
 	die.emit()
+
+func _update_facing_dirction(direction: Vector2):
+	if (direction.x < 0):
+		body.texture = skin.left_image
+	elif direction.x > 0:
+		body.texture = skin.right_image
+	elif direction.y > 0:
+		body.texture = skin.down_image
+	elif direction.y < 0:
+		body.texture = skin.up_image
 	

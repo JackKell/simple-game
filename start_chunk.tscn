@@ -32,49 +32,49 @@ tile_map_data = PackedByteArray("AAD//wIAAAAKAAsAAAA=")
 tile_set = ExtResource("1_622i6")
 
 [node name="spawner4" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(-96, 24)
+position = Vector2(-104, 24)
 max_spawn_time = 6
 car_speed = 18
 
 [node name="spawner9" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(-96, 40)
+position = Vector2(-104, 40)
 max_spawn_time = 6
 car_speed = 16
 
 [node name="spawner10" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(-96, 56)
+position = Vector2(-104, 56)
 max_spawn_time = 6
 car_speed = 14
 
 [node name="spawner5" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(96, -8)
+position = Vector2(104, -8)
 max_spawn_time = 4
 car_speed = -20
 
 [node name="spawner11" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(-96, -24)
+position = Vector2(-104, -24)
 max_spawn_time = 4
 car_speed = 20
 
 [node name="spawner6" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(96, -40)
+position = Vector2(104, -40)
 max_spawn_time = 4
 car_speed = -18
 
 [node name="spawner7" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(-96, -72)
+position = Vector2(-104, -72)
 min_spawn_time = 3
 max_spawn_time = 4
 car_speed = 32
 
 [node name="spawner12" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(96, -88)
+position = Vector2(104, -88)
 min_spawn_time = 3
 max_spawn_time = 4
 car_speed = -34
 
 [node name="spawner13" parent="." instance=ExtResource("2_bhpv7")]
-position = Vector2(-96, -104)
+position = Vector2(-104, -104)
 min_spawn_time = 3
 max_spawn_time = 4
 car_speed = 36

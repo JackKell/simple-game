@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://domy4rvhig06w"]
+
+[ext_resource type="Script" uid="uid://h6i1oflf0tka" path="res://meteorite_example.gd" id="1_asbsv"]
+[ext_resource type="PackedScene" uid="uid://cbo1nwwijx5gv" path="res://meteorite.tscn" id="2_ef67b"]
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_asbsv")
+
+[node name="Meteorite" parent="." instance=ExtResource("2_ef67b")]
+position = Vector2(24, 88)

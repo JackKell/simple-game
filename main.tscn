@@ -16,16 +16,20 @@ script = ExtResource("1_3d3i5")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 position_smoothing_enabled = true
+editor_draw_limits = true
 script = ExtResource("3_lquwl")
 target = NodePath("../player")
+crawl_speed = 10.0
+
+[node name="Marker2D" type="Marker2D" parent="Camera2D"]
+position = Vector2(0, 88)
 
 [node name="player" parent="." instance=ExtResource("3_b7e0s")]
 position = Vector2(-8, 120)
 
-[node name="track_manager" type="Node2D" parent="." node_paths=PackedStringArray("player", "start_chunk")]
+[node name="track_manager" type="Node2D" parent="." node_paths=PackedStringArray("start_chunk")]
 y_sort_enabled = true
 script = ExtResource("5_lquwl")
-player = NodePath("../player")
 tracked_pieces = Array[PackedScene]([ExtResource("6_7mycd")])
 start_chunk = NodePath("../chunk")
 

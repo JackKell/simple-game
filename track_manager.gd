@@ -1,5 +1,6 @@
 extends Node2D
-@export var player: Player
+
+@onready var camera: Camera2D = $"../Camera2D"
 @export var tracked_pieces: Array[PackedScene]
 @export var start_chunk: Node2D
 
@@ -18,5 +19,5 @@ func spawn_chunk():
 	add_child(selected_scene)
 	
 func _process(delta: float) -> void:
-	if (player.global_position.y <= offset):
+	if (camera.global_position.y <= offset):
 		spawn_chunk()
